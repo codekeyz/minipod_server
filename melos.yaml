@@ -1,0 +1,15 @@
+name: myminipod
+
+packages:
+  - "*"
+
+scripts:
+  analyze:
+    run: |
+      melos exec -c 1 -- \
+        dart analyze --fatal-infos
+    description: Run `dart analyze` for all packages.
+
+  format:
+    run: melos exec dart format . --fix
+    description: Run `dart format` for all packages.
